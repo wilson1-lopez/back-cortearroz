@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('fecha_inicio');
             $table->date('fecha_fin')->nullable();
             $table->decimal('valor_bulto', 10, 2);
-            $table->string('descripcion')->nullable();
+            $table->string('descripcion', 250)->nullable();
 
     // Claves foráneas
             $table->foreignId('cliente_id')->constrained('clientes')->onDelete('restrict')->comment('Referencia al cliente que solicita el corte');

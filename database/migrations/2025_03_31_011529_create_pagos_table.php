@@ -17,9 +17,9 @@ return new class extends Migration
 
             $table->date('fecha');
             $table->decimal('valor', 10, 2);
-            $table->string('forma_pago', 50);
-            $table->string('soporte')->nullable();
-            $table->string('pagado_por', 100);
+            $table->string('forma_pago', 250);
+            $table->string('soporte', 250)->nullable();
+            $table->string('pagado_por', 250);
             $table->timestamps();
         });
     }

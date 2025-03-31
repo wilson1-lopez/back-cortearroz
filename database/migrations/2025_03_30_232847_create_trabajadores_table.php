@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('trabajadores', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 100);
-            $table->string('apellido', 100);
-            $table->string('telefono', 20)->nullable();
-            $table->string('cedula', 20)->nullable();
-            $table->string('direccion')->nullable();
+            $table->string('nombre', 250);
+            $table->string('apellido', 250);
+            $table->string('telefono', 250)->nullable();
+            $table->string('cedula', 250)->nullable();
+            $table->string('direccion', 250)->nullable();
 
              // Foreignkeys
             $table->foreignId('tipo_id')->constrained('tipos_trabajadores')->onDelete('restrict')->comment('Relacion con la tabla tipos_trabajadores');

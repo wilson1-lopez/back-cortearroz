@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('maquinas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('descripcion')->nullable();
+            $table->string('nombre', 250);
+            $table->string('descripcion', 250)->nullable();
             $table->foreignId('propietario_id')->constrained('users')->onDelete('restrict')->comment('Relacion con la tabla users');
             $table->timestamps();
         });

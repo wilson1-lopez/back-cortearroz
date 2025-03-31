@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('proveedores', function (Blueprint $table) {
             $table->id();
             $table->foreignId('usuario_id')->constrained('users')->onDelete('restrict')->comment('Relacion con la tabla users');
-            $table->string('nombre', 100);
-            $table->string('telefono', 20)->nullable();
-            $table->string('email', 100)->unique()->nullable();
-            $table->string('direccion', 255)->nullable();
+            $table->string('nombre', 250);
+            $table->string('telefono', 250)->nullable();
+            $table->string('email', 250)->unique()->nullable();
+            $table->string('direccion', 250)->nullable();
             $table->timestamps();
         });
     }

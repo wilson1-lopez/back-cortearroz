@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('repuestos_proveedores_id')->constrained('repuestos_proveedores')->onDelete('restrict')->comment('Relacion con la tabla repuestos_proveedores');
             $table->integer('cantidad');
             $table->decimal('valor', 10, 2);
-            $table->string('forma_pago', 50);
+            $table->string('forma_pago', 250);
             $table->timestamps();
         });
     }

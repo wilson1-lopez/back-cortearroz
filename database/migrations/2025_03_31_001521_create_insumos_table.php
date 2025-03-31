@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('insumos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 100);
-            $table->string('descripcion')->nullable();
+            $table->string('nombre', 250);
+            $table->string('descripcion', 250)->nullable();
             $table->decimal('valor', 10, 2);
             $table->date('fecha');
 

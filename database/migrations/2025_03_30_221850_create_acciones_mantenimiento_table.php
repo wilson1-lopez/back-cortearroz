@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('acciones_mantenimiento', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mantenimiento_id')->constrained('mantenimientos')-> onDelete('restrict')->comment('Relacion con el mantenimiento');
-            $table->string('descripcion');
+            $table->string('descripcion', 250);
             $table->timestamps();
         });
     }

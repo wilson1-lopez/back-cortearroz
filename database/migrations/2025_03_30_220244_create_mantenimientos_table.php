@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('maquina_id')->constrained('maquinas')->onDelete('restrict')->comment('Relacion con la maquina');
             $table->date('fecha');
-            $table->string('nombre', 100);
-            $table->string('descripcion')->nullable();
-            $table->string('realizado_por', 100);
+            $table->string('nombre', 250);
+            $table->string('descripcion', 250)->nullable();
+            $table->string('realizado_por', 250);
             $table->timestamps();
         });
     }
