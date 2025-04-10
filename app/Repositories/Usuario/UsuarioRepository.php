@@ -2,10 +2,10 @@
 namespace App\Repositories\Usuario;
 
 use App\Models\User;
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Usuario\Interfaces\UsuarioRepositoryInterface;
 
-class UsuarioRepository implements RepositoryInterface
-{ public function all()
+class UsuarioRepository implements UsuarioRepositoryInterface{
+     public function all()
     {
         return User::all();
     }
@@ -30,5 +30,10 @@ class UsuarioRepository implements RepositoryInterface
     public function delete($id)
     {
         return User::destroy($id);
+    }
+
+    public function obtenerUsuarioConMaquinas(int $id): ?User
+    {
+        return User::with('maquinas')->find($id);
     }
 }

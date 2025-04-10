@@ -1,10 +1,10 @@
 <?php
 namespace App\Services;
 
-use App\Repositories\RepositoryInterface;
+use App\Repositories\Usuario\Interfaces\UsuarioRepositoryInterface;
 class UsuarioService
 {
-    public function __construct(protected RepositoryInterface $usuarioRepository){}
+    public function __construct(protected UsuarioRepositoryInterface $usuarioRepository){}
     public function getAllUsers()
     {
         return $this->usuarioRepository->all();
@@ -28,5 +28,10 @@ class UsuarioService
     public function deleteUser($id)
     {
         return $this->usuarioRepository->delete($id);
+    }
+
+    public function obtenerUsuarioConMaquinas(int $id)
+    {
+        return $this->usuarioRepository->obtenerUsuarioConMaquinas($id);
     }
 }

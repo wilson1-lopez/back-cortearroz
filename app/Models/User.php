@@ -49,4 +49,23 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+     
+    //Un usuario tiene muchas máquinas.
+    
+    public function maquinas()
+    {
+        return $this->hasMany(Maquina::class, 'usuario_id');
+    }
+
+    //relacion con proveedores
+    public function proveedores()
+    {
+        return $this->hasMany(Proveedor::class, 'usuario_id');
+    }
+
+    //relacion con repuestos 
+    public function repuestos()
+    {
+        return $this->hasMany(Repuesto::class, 'usuario_id');
+    }
 }

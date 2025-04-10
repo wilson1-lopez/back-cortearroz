@@ -9,8 +9,6 @@ use Illuminate\Http\JsonResponse;
 class UsuarioController extends Controller
 {
   
-
-
     public function __construct( protected UsuarioService $usuarioService){}
 
     public function index(): JsonResponse
@@ -36,5 +34,11 @@ class UsuarioController extends Controller
     public function destroy($id): JsonResponse
     {
         return response()->json($this->usuarioService->deleteUser($id), 204);
+    }
+
+    public function obtenerUsuarioConMaquinas(int $id): JsonResponse
+    {
+        $usuario = $this->usuarioService->obtenerUsuarioConMaquinas($id);
+        return response()->json($usuario);
     }
 }
