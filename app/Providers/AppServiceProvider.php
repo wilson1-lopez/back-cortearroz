@@ -22,6 +22,10 @@ use Illuminate\Support\ServiceProvider;
 use App\Repositories\RepuestoProveedores\Interfaces\RepuestoProveedoresRepositoryInterface;
 use App\Repositories\RepuestoMantenimiento\Interfaces\RepuestoMantenimientoRepositoryInterface;
 use App\Repositories\RepuestoMantenimiento\RepuestoMantenimientoRepository;
+use App\Repositories\Cliente\Interfaces\ClienteRepositoryInterface;
+use App\Repositories\Cliente\ClienteRepository;
+use App\Repositories\TipoTrabajador\Interfaces\TipoTrabajadorRepositoryInterface;
+use App\Repositories\TipoTrabajador\TipoTrabajadorRepository;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -42,6 +46,12 @@ class AppServiceProvider extends ServiceProvider
 
         //RepuestoMantenimiento
         $this->app->bind(RepuestoMantenimientoRepositoryInterface::class, RepuestoMantenimientoRepository::class);
+
+        //Cliente
+        $this->app->bind(ClienteRepositoryInterface::class, ClienteRepository::class);
+
+        //TipoTrabajador
+        $this->app->bind(TipoTrabajadorRepositoryInterface::class, TipoTrabajadorRepository::class);
 
         //login
         $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
