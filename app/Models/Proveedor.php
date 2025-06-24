@@ -24,9 +24,11 @@ class Proveedor extends Model
         'direccion',        
     ];
 
-    public function repuestosProveedores()
+   //relacion con la tabla repuesto
+    public function repuestos()
     {
-        return $this->hasMany(RepuestoProveedores::class, 'proveedor_id');
+        return $this->belongsToMany(Repuesto::class, 'repuestos_proveedores', 'proveedor_id', 'repuesto_id')
+            ->withPivot('precio');
     }
 
     //relacion con la tabla users

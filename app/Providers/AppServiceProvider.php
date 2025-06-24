@@ -5,6 +5,8 @@ namespace App\Providers;
 
 use App\Repositories\AccionMantenimiento\AccionMantenimientoRepository;
 use App\Repositories\AccionMantenimiento\Interfaces\AccionMantenimientoRepositoryInterface;
+use App\Repositories\AuthRepository\Interfaces\AuthRepositoryInterface;
+use App\Repositories\AuthRepository\AuthRepository;
 use App\Repositories\Usuario\UsuarioRepository;
 use App\Repositories\Maquina\MaquinaRepository;
 use App\Repositories\Usuario\Interfaces\UsuarioRepositoryInterface;
@@ -20,6 +22,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Repositories\RepuestoProveedores\Interfaces\RepuestoProveedoresRepositoryInterface;
 use App\Repositories\RepuestoMantenimiento\Interfaces\RepuestoMantenimientoRepositoryInterface;
 use App\Repositories\RepuestoMantenimiento\RepuestoMantenimientoRepository;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -39,6 +42,9 @@ class AppServiceProvider extends ServiceProvider
 
         //RepuestoMantenimiento
         $this->app->bind(RepuestoMantenimientoRepositoryInterface::class, RepuestoMantenimientoRepository::class);
+
+        //login
+        $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
     
 }
 

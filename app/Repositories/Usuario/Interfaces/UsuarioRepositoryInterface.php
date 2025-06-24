@@ -8,4 +8,6 @@ use App\Repositories\RepositoryInterface;
 interface UsuarioRepositoryInterface extends RepositoryInterface
 {
     public function obtenerUsuarioConMaquinas(int $id): ?User;
+
+   
 }

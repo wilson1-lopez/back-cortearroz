@@ -26,7 +26,8 @@ class MaquinaRequest extends FormRequest
         return [
             'nombre' => 'required|string|max:250',
             'descripcion' => 'nullable|string|max:250',
-            'usuario_id' => 'required|exists:users,id',
+            'estado' => 'required|string|max:250',
+           // 'usuario_id' => 'required|exists:users,id',
         ];
     }
     protected function failedValidation(Validator $validator)

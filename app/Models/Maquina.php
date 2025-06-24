@@ -16,6 +16,7 @@ class Maquina extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
+        'estado',
         'usuario_id',
     ];
 

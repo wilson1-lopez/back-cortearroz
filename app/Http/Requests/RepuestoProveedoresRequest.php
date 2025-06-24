@@ -18,7 +18,7 @@ class RepuestoProveedoresRequest extends FormRequest
         return [
             'repuesto_id'   => 'required|exists:repuestos,id',
             'proveedor_id'  => 'required|exists:proveedores,id',
-            'precio'        => 'required|numeric|min:0.01',
+            //'precio'        => 'required|numeric|min:0.01',
         ];
     }
 
@@ -29,9 +29,9 @@ class RepuestoProveedoresRequest extends FormRequest
             'repuesto_id.exists'      => 'El repuesto seleccionado no existe.',
             'proveedor_id.required'   => 'El proveedor es obligatorio.',
             'proveedor_id.exists'     => 'El proveedor seleccionado no existe.',
-            'precio.required'         => 'El precio es obligatorio.',
-            'precio.numeric'          => 'El precio debe ser un número.',
-            'precio.min'              => 'El precio debe ser mayor a 0.',
+           // 'precio.required'         => 'El precio es obligatorio.',
+           // 'precio.numeric'          => 'El precio debe ser un número.',
+            //'precio.min'              => 'El precio debe ser mayor a 0.',
         ];
     }
 

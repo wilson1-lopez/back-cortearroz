@@ -12,8 +12,9 @@ class RepuestoMantenimientoController extends Controller{
     }
 
     public function store(RepuestoMantenimientoRequest $request){
-
-      return response()->json($this->repuestoMantenimientoService->registrarRepuestoMantenimiento($request->validated(), 201)); 
-
+        return response()->json(
+            $this->repuestoMantenimientoService->registrarRepuestoMantenimiento($request->validated()),
+            201
+        );
     }
 }

@@ -6,5 +6,5 @@ use App\Repositories\RepositoryInterface;
 
 interface MaquinaRepositoryInterface extends RepositoryInterface
 {
-    
+    public function obtenerMaquinaConUsuario($id);
 }

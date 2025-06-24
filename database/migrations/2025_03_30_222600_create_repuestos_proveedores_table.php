@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('repuesto_id')->constrained('repuestos')->onDelete('restrict')-> comment('Relacion con la tabla repuestos');
             $table->foreignId('proveedor_id')->constrained('proveedores')->onDelete('restrict') -> comment('Relacion con la tabla proveedores');
-            $table->decimal('precio', 10, 2);
+            $table->decimal('precio', 10, 2)->nullable();
             $table->timestamps();
         });
     }

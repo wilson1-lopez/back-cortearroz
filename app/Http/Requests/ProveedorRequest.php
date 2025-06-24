@@ -20,7 +20,7 @@ class ProveedorRequest extends FormRequest
             'telefono' => 'nullable|string|max:250',
             'email' => 'nullable|string|email|max:250',
             'direccion' => 'nullable|string|max:250',
-            'usuario_id' => 'required|exists:users,id',
+            //'usuario_id' => 'required|exists:users,id',
         ];
     }
 
@@ -31,7 +31,7 @@ class ProveedorRequest extends FormRequest
             'telefono.required' => 'El telefono es obligatorio.',
             'email.required' => 'El email es obligatorio.',
             'direccion.required' => 'La direccion es obligatorio.',
-            'usuario_id.required' => 'El usuario es obligatorio.',
+           // 'usuario_id.required' => 'El usuario es obligatorio.',
             'usuario_id.exists' => 'El usuario seleccionado no existe.',
             
 

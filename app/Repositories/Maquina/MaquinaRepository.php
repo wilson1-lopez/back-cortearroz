@@ -29,5 +29,8 @@ class MaquinaRepository implements MaquinaRepositoryInterface{
         return Maquina::destroy($id);
     }
 
-    
+    public function obtenerMaquinaConUsuario($id){
+        return Maquina::where('usuario_id', $id)
+                        ->get();                  
+    }
 }

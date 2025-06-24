@@ -29,5 +29,15 @@ class ProveedorRepository implements ProveedorRepositoyInterface{
         return Proveedor::destroy($id);
     }
 
-    
+    public function obtenerProveedoresPorUsuario($id){
+        return Proveedor::where('usuario_id', $id)->get();
+    }
+
+
+public function actualizar($id, array $data)
+{
+    $proveedor = Proveedor::findOrFail($id);
+    $proveedor->update($data);
+    return $proveedor;
+}
 }

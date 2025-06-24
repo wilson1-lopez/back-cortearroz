@@ -25,4 +25,12 @@ class Repuesto extends Model
         return $this->belongsTo(User::class, 'usuario_id');
     }
 
+    //lo relacionamos con proveedores
+    public function proveedores()
+    {
+        return $this->belongsToMany(Proveedor::class, 'repuestos_proveedores', 'repuesto_id', 'proveedor_id')
+            ->withPivot('precio');
+    }
+
 }
+

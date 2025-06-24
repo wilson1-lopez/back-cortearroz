@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 250);
             $table->string('descripcion', 250)->nullable();
+            $table->string('estado', 250)->default('activa');
             $table->foreignId('usuario_id')->constrained('users')->onDelete('restrict')->comment('Relacion con la tabla users');
             $table->timestamps();
         });

@@ -36,4 +36,5 @@ class UsuarioRepository implements UsuarioRepositoryInterface{
     {
         return User::with('maquinas')->find($id);
     }
+
 }

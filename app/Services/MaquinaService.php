@@ -2,7 +2,7 @@
 
 namespace App\Services;
 use App\Repositories\Maquina\Interfaces\MaquinaRepositoryInterface;
-    
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MaquinaService
 {
@@ -31,6 +31,12 @@ class MaquinaService
     {
         return $this->maquinaRepository->delete($id);
     }
+
+    public function obtenerMaquinaConUsuario($id)
+    {
+        return $this->maquinaRepository->obtenerMaquinaConUsuario($id);
+    }
+    
 
 
 

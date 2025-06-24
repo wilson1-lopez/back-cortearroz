@@ -33,4 +33,13 @@ class MantenimientoRepository implements MantenimientoRepositoryInterface
     {
         return Mantenimiento::destroy($id);
     }
+    
+    public function obtenerMantenimientosPorMaquinaId($id)
+    {
+        return \App\Models\Maquina::with([
+            'mantenimientos.repuestos_mantenimientos.repuestos_proveedores.repuesto',
+            'mantenimientos.repuestos_mantenimientos.repuestos_proveedores.proveedor',
+            'mantenimientos.accionmantenimientos'
+        ])->find($id);
+    }
 }

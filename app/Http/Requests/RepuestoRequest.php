@@ -26,9 +26,10 @@ class RepuestoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'required|string|max:250',
-            'descripcion' => 'nullable|string|max:250',
-            'usuario_id' => 'required|exists:users,id',
+            'nombre' => 'required|string|max:255',
+            'descripcion' => 'nullable|string',
+           // 'proveedor_id' => 'required|exists:proveedores,id',
+            'precio' => 'nullable|numeric|min:0.01'
         ];
     }
     protected function failedValidation(Validator $validator)
