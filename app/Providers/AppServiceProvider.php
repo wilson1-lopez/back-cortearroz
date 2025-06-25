@@ -30,6 +30,8 @@ use App\Repositories\Trabajador\Interfaces\TrabajadorRepositoryInterface;
 use App\Repositories\Trabajador\TrabajadorRepository;
 use App\Repositories\Temporada\Interfaces\TemporadaRepositoryInterface;
 use App\Repositories\Temporada\TemporadaRepository;
+use App\Repositories\Corte\Interfaces\CorteRepositoryInterface;
+use App\Repositories\Corte\CorteRepository;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -62,6 +64,9 @@ class AppServiceProvider extends ServiceProvider
 
         //Temporada
         $this->app->bind(TemporadaRepositoryInterface::class, TemporadaRepository::class);
+
+        //Corte
+        $this->app->bind(CorteRepositoryInterface::class, CorteRepository::class);
 
         //login
         $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
