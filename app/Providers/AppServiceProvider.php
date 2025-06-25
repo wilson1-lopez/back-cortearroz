@@ -26,6 +26,8 @@ use App\Repositories\Cliente\Interfaces\ClienteRepositoryInterface;
 use App\Repositories\Cliente\ClienteRepository;
 use App\Repositories\TipoTrabajador\Interfaces\TipoTrabajadorRepositoryInterface;
 use App\Repositories\TipoTrabajador\TipoTrabajadorRepository;
+use App\Repositories\Trabajador\Interfaces\TrabajadorRepositoryInterface;
+use App\Repositories\Trabajador\TrabajadorRepository;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -52,6 +54,9 @@ class AppServiceProvider extends ServiceProvider
 
         //TipoTrabajador
         $this->app->bind(TipoTrabajadorRepositoryInterface::class, TipoTrabajadorRepository::class);
+
+        //Trabajador
+        $this->app->bind(TrabajadorRepositoryInterface::class, TrabajadorRepository::class);
 
         //login
         $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);

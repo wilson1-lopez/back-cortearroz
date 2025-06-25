@@ -19,4 +19,12 @@ class TipoTrabajador extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
+
+    /**
+     * Relación con trabajadores
+     */
+    public function trabajadores()
+    {
+        return $this->hasMany(Trabajador::class, 'tipo_id');
+    }
 }
