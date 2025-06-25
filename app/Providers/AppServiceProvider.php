@@ -28,6 +28,8 @@ use App\Repositories\TipoTrabajador\Interfaces\TipoTrabajadorRepositoryInterface
 use App\Repositories\TipoTrabajador\TipoTrabajadorRepository;
 use App\Repositories\Trabajador\Interfaces\TrabajadorRepositoryInterface;
 use App\Repositories\Trabajador\TrabajadorRepository;
+use App\Repositories\Temporada\Interfaces\TemporadaRepositoryInterface;
+use App\Repositories\Temporada\TemporadaRepository;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -57,6 +59,9 @@ class AppServiceProvider extends ServiceProvider
 
         //Trabajador
         $this->app->bind(TrabajadorRepositoryInterface::class, TrabajadorRepository::class);
+
+        //Temporada
+        $this->app->bind(TemporadaRepositoryInterface::class, TemporadaRepository::class);
 
         //login
         $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
